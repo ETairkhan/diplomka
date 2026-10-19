@@ -2,9 +2,9 @@
 # Secrets are read from environment variables (.env), not written here.
 
 app:
-    name: "[TEMPORARY NAME] AI"
+    name: "AI"
     env: development
-    default_language: ru
+    language: ru
 
 database:
     host: ${DB_HOST}
@@ -13,20 +13,28 @@ database:
     user: ${DB_USER}
     password: ${DB_PASSWORD}
 
-speech:
-    service_url: ${SPEECH_SERVICE_URL}
-    model: whisper-small
+storage:
+    endpoint: ${MINIO_ENDPOINT}
+    bucket: ${MINIO_BUCKET}
+    audio_retention_days: 30
+
+queue:
+    url: ${RABBITMQ_URL}
+    retries: 3
+
+ml:
+    asr_model: large-v3
     language: ru
-    max_audio_seconds: 180
+    denoise_model: to-be-chosen
 
 llm:
-    service_url: ${LLM_SERVICE_URL}
     provider: ${LLM_PROVIDER}
     model: ${LLM_MODEL}
     api_key: ${LLM_API_KEY}
     temperature: 0.2
 
 roles:
+    - system_admin
     - org_admin
     - teacher
     - student

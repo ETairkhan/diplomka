@@ -96,6 +96,7 @@ vendor/
 # =========================================================
 node_modules/
 src/frontend/dist/
+*.tsbuildinfo
 src/frontend/coverage/
 .vite/
 npm-debug.log*

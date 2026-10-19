@@ -5,8 +5,7 @@ The folders here follow the structure of `src/`.
 | Folder | Tool | Run |
 | --- | --- | --- |
 | `backend/` | Go `testing` (API tests) | `cd tests/backend && go test ./...` |
-| `speech_service/` | pytest | `pytest tests/speech_service` |
-| `llm_service/` | pytest | `pytest tests/llm_service` |
+| `ml_service/` | pytest | `pytest` (from the repository root) |
 | `frontend/` | Vitest | `cd src/frontend && npm test` |
 | `e2e/` | end-to-end scenarios | later |
 | `fixtures/` | small fake test data | |

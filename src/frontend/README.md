@@ -1,6 +1,6 @@
-# Frontend
+# Frontend (React + TypeScript)
 
-React web app with cabinets for organization admin, teacher, student and parent.
+React + TypeScript web client with three cabinets: organization (admin and teacher), student and parent.
 
 ```
 npm install
@@ -12,6 +12,6 @@ Folders:
 
 | Folder | What is inside |
 | --- | --- |
-| `src/pages/` | Pages (one folder per cabinet) |
+| `src/pages/` | Pages: `auth/`, `organization/` (admin + teacher), `student/`, `parent/` |
 | `src/components/` | Reusable UI components |
 | `src/api/` | Calls to the backend API |

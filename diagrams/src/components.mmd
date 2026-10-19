@@ -1,5 +1,10 @@
 flowchart LR
-    FE[Frontend<br/>React] --> BE[Backend API<br/>Go]
-    BE --> DB[(Database)]
-    BE --> STT[Speech service<br/>speech-to-text]
-    BE --> LLM[LLM service<br/>answer evaluation]
+    FE[Web client<br/>React + TypeScript] -->|REST| BE[Backend API<br/>Go]
+    BE --> DB[(PostgreSQL + pgvector)]
+    BE --> S3[(MinIO<br/>audio files)]
+    BE --> RD[(Redis)]
+    BE -->|jobs| MQ[[RabbitMQ]]
+    MQ --> ML[ML service<br/>Python]
+    ML --> S3
+    ML --> LLM[LLM via adapter<br/>anonymized text]
+    ML -->|transcript, scores| DB

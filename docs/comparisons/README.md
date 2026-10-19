@@ -6,6 +6,7 @@ The final decision is also recorded as an ADR in `../architecture/`.
 
 | File | Topic |
 | --- | --- |
-| `speech-to-text.md` | Speech-to-text engines |
-| `llm-providers.md` | LLM providers and models |
-| `tech-stack.md` | Frontend, backend and database |
+| `denoising.md` | Denoising models (WER before / after) |
+| `asr-diarization.md` | Speech recognition and diarization |
+| `llm.md` | LLM for lesson analysis |
+| `tech-stack.md` | Frontend, backend, database, queue, storage |

@@ -1,18 +1,20 @@
 @startuml context
 title System context
 
-actor "Student" as student
-actor "Teacher" as teacher
-actor "Parent" as parent
 actor "Organization admin" as admin
+actor "Teacher" as teacher
+actor "Student" as student
+actor "Parent" as parent
+actor "System admin" as sysadmin
 
 rectangle "Knowledge Control System" as system
 
 cloud "LLM provider" as llm
 
-student --> system : answers by voice
-teacher --> system : creates tests, sees results
-parent --> system : sees child's progress
-admin --> system : manages users
-system --> llm : evaluates answers (no personal data)
+admin --> system : manages teachers, students, question bank
+teacher --> system : uploads lesson recordings, reads reports
+student --> system : reads reports, knowledge map, takes tests
+parent --> system : gives consent, reads reports and weekly summary
+sysadmin --> system : manages organizations, models, prompts
+system --> llm : anonymized transcript only
 @enduml

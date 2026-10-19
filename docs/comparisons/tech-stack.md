@@ -1,19 +1,19 @@
 # Comparison: Tech Stack
 
 ## Criteria
-- Quality for Russian and Kazakh
-- Cost
-- Speed
-- Privacy (where the data is processed)
-- Ease of integration
+- Team experience
+- Ecosystem
+- Performance
 
 ## Comparison table
 
-| Option | Quality | Cost | Privacy | Notes |
-| --- | --- | --- | --- | --- |
-| Frontend: React | | | | |
-| Backend: Go (net/http) | | | | |
-| Database: PostgreSQL | | | | |
+| Option | Result | Notes | Score |
+| --- | --- | --- | --- |
+| Frontend: React + TypeScript + Vite | | | |
+| Backend: Go (Gin or chi) | | | |
+| Database: PostgreSQL 16 + pgvector | | | |
+| Queue: RabbitMQ | | | |
+| Storage: MinIO | | | |
 
 ## Decision
 
