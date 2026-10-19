@@ -1,0 +1,33 @@
+# Example application config. Copy to app.yaml.
+# Secrets are read from environment variables (.env), not written here.
+
+app:
+    name: "[TEMPORARY NAME] AI"
+    env: development
+    default_language: ru
+
+database:
+    host: ${DB_HOST}
+    port: ${DB_PORT}
+    name: ${DB_NAME}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+speech:
+    service_url: ${SPEECH_SERVICE_URL}
+    model: whisper-small
+    language: ru
+    max_audio_seconds: 180
+
+llm:
+    service_url: ${LLM_SERVICE_URL}
+    provider: ${LLM_PROVIDER}
+    model: ${LLM_MODEL}
+    api_key: ${LLM_API_KEY}
+    temperature: 0.2
+
+roles:
+    - org_admin
+    - teacher
+    - student
+    - parent

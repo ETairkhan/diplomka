@@ -1,0 +1,18 @@
+@startuml context
+title System context
+
+actor "Student" as student
+actor "Teacher" as teacher
+actor "Parent" as parent
+actor "Organization admin" as admin
+
+rectangle "Knowledge Control System" as system
+
+cloud "LLM provider" as llm
+
+student --> system : answers by voice
+teacher --> system : creates tests, sees results
+parent --> system : sees child's progress
+admin --> system : manages users
+system --> llm : evaluates answers (no personal data)
+@enduml

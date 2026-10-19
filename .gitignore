@@ -1,0 +1,111 @@
+# =========================================================
+# Secrets and local configuration (never commit these)
+# =========================================================
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+config/*.yaml
+config/*.yml
+config/*.json
+!config/*.example.yaml
+!config/*.example.yml
+!config/*.example.json
+secrets/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+*.secret
+*.secrets
+
+# =========================================================
+# Personal and user data (voice recordings, answers, exports)
+# =========================================================
+data/
+uploads/
+recordings/
+media/
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.webm
+*.flac
+*.csv
+*.xlsx
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.sql.gz
+!tests/fixtures/**/*.csv
+!tests/fixtures/**/*.wav
+
+# =========================================================
+# Python
+# =========================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.log
+
+# ML models and caches (large files, download them instead)
+/models/
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+.cache/
+huggingface/
+
+# =========================================================
+# Node / frontend
+# =========================================================
+node_modules/
+src/frontend/dist/
+src/frontend/coverage/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================================================
+# Diagrams: temporary files of the editors
+# =========================================================
+diagrams/**/*.bkp
+diagrams/**/*.dtmp
+diagrams/**/.$*
+
+# =========================================================
+# IDE and OS
+# =========================================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
