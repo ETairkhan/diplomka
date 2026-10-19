@@ -1,6 +1,6 @@
 # Intelligent Knowledge Control System
 
-Working name: **"... AI"** (the final name will be chosen by the team).
+Working name: **"DATERA EDU"**.
 
 A web system that automatically builds knowledge reports from a recorded lesson.
 The teacher uploads a lesson recording. The system cleans the audio, turns speech into text,
@@ -64,7 +64,7 @@ Target quality metrics (from the technical specification):
 | Tairkhan | Backend developer | Go API, database, task queue, file storage, authorization, integration with the ML service |
 | Yermakhan | Frontend developer | Web interface of the three cabinets, progress visualization, recording player with time codes, tests for students; Figma mockups |
 
-Supervisor: **<add supervisor's full name and position>**
+Supervisor: **Khaimuldin Nursultan Gazizovich**
 
 ## Project scope
 
