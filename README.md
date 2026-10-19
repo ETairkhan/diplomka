@@ -145,7 +145,7 @@ Architecture: [component diagram](diagrams/src/components.mmd), [context diagram
 
 | Resource | Link |
 | --- | --- |
-| YouTrack project (tasks) | <add YouTrack project link> |
+| YouTrack project (tasks) | <https://yakarta.youtrack.cloud/agiles/177-28/current> |
 | Figma mockups | <add Figma link> |
 | Documentation index | [docs/README.md](docs/README.md) |
 | Technical specification | [docs/requirements/technical-specification.pdf](docs/requirements/technical-specification.pdf) |
