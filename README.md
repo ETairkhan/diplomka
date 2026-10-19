@@ -11,7 +11,7 @@ admins each have their own cabinet.
 .
 ├── src/                     Source code, one folder per component
 │   ├── frontend/            React web app (cabinets for all roles)
-│   ├── backend/             Main REST API (FastAPI)
+│   ├── backend/             Main REST API (Go)
 │   ├── speech_service/      Speech-to-text service
 │   └── llm_service/         Answer evaluation with an LLM
 ├── tests/                   Tests, same structure as src/
@@ -39,16 +39,22 @@ admins each have their own cabinet.
     cp config/app.example.yaml config/app.yaml
     ```
 
-2. Backend and services (Python 3.11+):
+2. Backend (Go 1.22+):
+
+    ```
+    cd src/backend
+    go run ./cmd/server         # http://localhost:8080/health
+    ```
+
+3. Speech and LLM services (Python 3.11+):
 
     ```
     python -m venv .venv
     source .venv/bin/activate          # Windows: .venv\Scripts\activate
-    pip install -r src/backend/requirements.txt -r requirements-dev.txt
-    uvicorn app.main:app --reload --app-dir src/backend
+    pip install -r src/speech_service/requirements.txt -r src/llm_service/requirements.txt -r requirements-dev.txt
     ```
 
-3. Frontend (Node.js 20+):
+4. Frontend (Node.js 20+):
 
     ```
     cd src/frontend
@@ -56,11 +62,13 @@ admins each have their own cabinet.
     npm run dev
     ```
 
-4. Tests:
+5. Tests:
 
     ```
-    pytest                          # backend and service tests
-    cd src/frontend && npm test     # frontend tests
+    cd src/backend && go test ./...     # backend unit tests
+    cd tests/backend && go test ./...   # backend API tests
+    pytest                              # speech and LLM service tests
+    cd src/frontend && npm test         # frontend tests
     ```
 
 ## Security and personal data

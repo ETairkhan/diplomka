@@ -12,7 +12,7 @@
 | Option | Quality | Cost | Privacy | Notes |
 | --- | --- | --- | --- | --- |
 | Frontend: React | | | | |
-| Backend: FastAPI | | | | |
+| Backend: Go (net/http) | | | | |
 | Database: PostgreSQL | | | | |
 
 ## Decision
