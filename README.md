@@ -146,7 +146,7 @@ Architecture: [component diagram](diagrams/src/components.mmd), [context diagram
 | Resource | Link |
 | --- | --- |
 | YouTrack project (tasks) | <https://yakarta.youtrack.cloud/agiles/177-28/current> |
-| Figma mockups | <add Figma link> |
+| Figma mockups | <https://www.figma.com/design/oVOPB0JhPKVFBVWMuBbSlG/DATERA-EDU---UI?node-id=28-6&t=PEkTWHH2R80kr88c-1> |
 | Documentation index | [docs/README.md](docs/README.md) |
 | Technical specification | [docs/requirements/technical-specification.pdf](docs/requirements/technical-specification.pdf) |
 | Requirements | [docs/requirements/](docs/requirements/) |
