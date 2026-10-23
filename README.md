@@ -2,7 +2,7 @@
 
 **Intelligent Knowledge Control System** - a diploma project at Astana IT University.
 
-A web system that analyses a recorded one-to-one lesson using the teacher’s course materials. It identifies topics the student understood and topics that need more work, builds a knowledge map, and prepares separate reports for the teacher, student and parent. The teacher can check the evidence and correct any assessment.
+Development of an intelligent system for monitoring student knowledge acquisition using speech recognition technologies and large language models for analyzing teacher-student dialogue
 
 ## Problem, users and aim
 
@@ -22,7 +22,7 @@ Teachers need a record of each student’s difficulties, parents need a clear pi
 | Tairkhan Yermek | Backend: Go API, database, queue, file storage, authorisation and ML integration |
 | Yermakhan Khamitov | Frontend: Figma prototype, web interface, reports, knowledge map and recording player |
 
-**Supervisor:** Khaimuldin Nursultan Gazizovich.
+**Supervisor:** Khaimuldin Nursultan Gazizovich
 
 ## Scope and current status
 
