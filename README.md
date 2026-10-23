@@ -52,7 +52,7 @@ The table follows the 11 pre-defense evaluation components. Documents contain th
 | 8 | UX / prototype | [Figma prototype](https://www.figma.com/design/oVOPB0JhPKVFBVWMuBbSlG/DATERA-EDU---UI?node-id=28-6) - user screens and key scenarios |
 | 9 | Verification and evaluation | [Verification Plan](docs/verification-plan.pdf) - tests, metrics, measurement conditions, targets and baselines |
 | 10 | Project management and risks | [Project Management and Risks](docs/project-management-and-risks.pdf) and [YouTrack](https://yakarta.youtrack.cloud/agiles/177-28/current) - responsibilities, milestones, tasks, risks and dependencies |
-| 11 | Supervisor feedback | Review comments, agreed actions and resulting revisions still need to be linked here; no dedicated feedback record was found in the repository |
+| 11 | Supervisor feedback | Review comments, agreed actions and resulting revisions |
 
 The **Requirements Traceability** document links requirements to components and checks. It is available in the [Requirements Traceability](docs/requirements-traceability.pdf)
 
