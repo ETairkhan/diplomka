@@ -1,5 +1,4 @@
-# Example application config. Copy to app.yaml.
-# Secrets are read from environment variables (.env), not written here.
+
 
 app:
     name: "AI"
