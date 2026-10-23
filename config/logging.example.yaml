@@ -9,4 +9,3 @@ handlers:
 root:
     level: INFO
     handlers: [console]
-# Do not log passwords, tokens, audio or student answers.
