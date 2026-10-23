@@ -1,236 +1,158 @@
-# Intelligent Knowledge Control System
+# DATERA EDU
 
-Working name: **"DATERA EDU"**.
+**Intelligent Knowledge Control System** - a diploma project at Astana IT University.
 
-A web system that automatically builds knowledge reports from a recorded lesson.
-The teacher uploads a lesson recording. The system cleans the audio, turns speech into text,
-finds out who is speaking (teacher or student), and an LLM analyzes the dialogue.
-As a result, the teacher, the student and the parent each get a report: which topics
-the student understands and which topics need more work. The student also gets a test
-on the weak topics.
+A web system that analyses a recorded one-to-one lesson using the teacher’s course materials. It identifies topics the student understood and topics that need more work, builds a knowledge map, and prepares separate reports for the teacher, student and parent. The teacher can check the evidence and correct any assessment.
 
-Diploma project (graduation thesis), Astana IT University. Full requirements are in the
-[technical specification](docs/requirements/TZ_DATERA.docx) (in Russian).
+## Problem, users and aim
 
-## Problem statement
+Teachers need a record of each student’s difficulties, parents need a clear picture of progress, and students need to know what to practise next. Five interviews with three parents, one teacher and one student informed the requirements. Assumptions that were not checked in the interviews are identified in the [Evidence of Relevance](docs/evidence-of-relevance.pdf).
 
-Today knowledge control after a lesson is manual:
+**Target users:** tutors, language schools, online schools, learning centres, students and parents.
 
-- The teacher has to remember what was covered in earlier lessons. When the teacher changes,
-  this history is lost.
-- Parents learn about problems only from test grades, which is too late.
-- Re-watching a lesson recording takes as long as the lesson itself, so in practice nobody does it.
+**Aim:** build and evaluate a system that checks students’ answers against course materials and tracks understanding by topic.
 
-As a result, gaps in a student's knowledge are found late, and the teacher spends a lot of
-time preparing for the next lesson.
-
-## Target users
-
-Target customers: online schools and learning centers, private tutors, specialized schools.
-The system works with any subject that is taught through spoken explanation.
-
-| Role | Cabinet | Main actions |
-| --- | --- | --- |
-| Organization admin | Organization | Manages teachers, students, groups and the question bank; sees analytics for all students |
-| Teacher | Organization | Uploads lesson recordings, checks speaker labels, reads reports, assigns tests |
-| Student | Student | Reads reports, sees the knowledge map and lesson recordings, takes tests |
-| Parent | Parent | Gives consent for recording processing, reads reports and weekly summaries |
-| System admin | Service | Manages organizations, models and prompts, monitors the processing queue |
-
-A private tutor registers as an organization of one person.
-
-## Expected outcomes
-
-1. Less teacher time spent on lesson analysis and preparation for the next lesson.
-2. A clear picture of the child's progress for parents, without special terms.
-3. A personal list of topics to repeat and tests that close the student's own gaps.
-4. Objective progress data for the organization that is kept when a teacher changes.
-
-Target quality metrics (from the technical specification):
-
-| Metric | Target |
-| --- | --- |
-| Report time for a 60-minute lesson | not more than 30 minutes |
-| Speech recognition error (WER) | not more than 20 % |
-| Diarization error (DER) | not more than 20 % |
-| Topic status agreement with the teacher's assessment | at least 70 % of topics |
-| LLM answers that match the JSON schema | at least 95 % |
+**Expected outcomes:** less time spent reviewing lessons, clearer progress reports, a personal list of topics to repeat, and a history of assessments. These outcomes will be evaluated in the pilot.
 
 ## Team
 
-| Member | Role | Responsibilities |
-| --- | --- | --- |
-| David | Product manager, ML/AI | Requirements, priorities, acceptance; ML pipeline (audio cleaning, Whisper, diarization); LLM prompts and quality evaluation |
-| Tairkhan | Backend developer | Go API, database, task queue, file storage, authorization, integration with the ML service |
-| Yermakhan | Frontend developer | Web interface of the three cabinets, progress visualization, recording player with time codes, tests for students; Figma mockups |
+| Member | Role and responsibilities |
+|---|---|
+| David Khamitskiy | Project manager, ML/AI: requirements, priorities, speech processing, LLM analysis, evaluation and fine-tuning |
+| Tairkhan Yermek | Backend: Go API, database, queue, file storage, authorisation and ML integration |
+| Yermakhan Khamitov | Frontend: Figma prototype, web interface, reports, knowledge map and recording player |
 
-Supervisor: **Khaimuldin Nursultan Gazizovich**
+**Supervisor:** Khaimuldin Nursultan Gazizovich.
 
-## Project scope
+## Scope and current status
 
-### In scope (MVP, required for the defense)
+**First pre-defense - 24 October 2026:** the submission focuses on analysis, requirements, design and planning. The documents and diagrams below are available. Starter code exists; the complete application and ML pipeline are still under development.
 
-- Registration, login and role-based access (organization, teacher, student, parent)
-- Electronic consent for recording processing (from the parent if the student is under 18)
-- Study structure: subjects, groups, students and teachers
-- Upload of lesson recordings (audio or video) with processing status
-- Audio preprocessing and denoising
-- Speech recognition with time codes and speaker diarization
-- LLM analysis of the lesson: topics, scores, summary, recommendations
-- Knowledge index (0-100 %) and knowledge map for each student
-- Reports after each lesson and weekly summaries, a separate version for each role
-- Question bank and tests on weak topics
-- In-app notifications and system administration
-- Lessons in Russian; individual lessons fully, group lessons in a simple form
-  (the teacher matches voices to students manually)
+**MVP - early March 2027:** materials and confirmed topics, lesson upload, speech recognition and speaker separation, analysis, three reports, a knowledge map, teacher corrections, consent and role-based access. It covers one-to-one lessons in English, Russian and mixed English–Russian speech.
 
-### Out of scope (future development)
+**Stage 2 - March–April 2027:** tests on weak topics, weekly summaries, notifications and evaluation of a fine-tuned open language model. A trial fine-tuning experiment on open data is planned for late winter 2027.
 
-- Kazakh and mixed Russian-Kazakh speech
-- Automatic recognition of students by voice in group lessons
-- Login with Google and other external providers
-- Lesson recording in the browser, Zoom / Google Meet integration
-- Notifications by email, Telegram and push; PDF export; monthly summaries
-- Open-answer questions checked by an LLM; LLM-generated questions
-- ML forecast of test risk; teacher efficiency analytics
+**Outside the MVP:** Kazakh, group lessons, automatic student identification by voice and video-call integrations.
 
-### Timeline
+**Next steps:** address supervisor feedback, confirm GPU access and consented recordings, implement the core flow, and run the verification plan. The pilot is planned for March–April 2027 and the thesis write-up for April–May 2027.
 
-| Event | Date |
-| --- | --- |
-| Approval of the technical specification | November 2026 |
-| Start of development | early November 2026 |
-| Pre-defense 1 | October 24, 2026 |
-| MVP ready | end of February - early March 2027 |
-| Testing, metrics, thesis writing | March - May 2027 |
-| Defense | early June 2027 |
+## Documentation
 
-## Current development status
+The table follows the 11 pre-defense evaluation components. Documents contain the detailed evidence, requirements and decisions.
 
-Stage 1 of 9: **preparation** (as of October 2026).
+| # | Component | Material |
+|---|---|---|
+| 1 | Project proposal | [Project Proposal](docs/project-proposal.pdf) - problem, users, aim, objectives, outcomes and scope |
+| 2 | Evidence of relevance | [Evidence of Relevance](docs/evidence-of-relevance.pdf) - five interviews, findings, assumptions and their effect on requirements |
+| 3 | Literature review | [Literature Review](docs/literature-review.pdf) - structured analysis of 19 scientific articles and 10 technical sources, approaches and limitations |
+| 4 | Existing system comparison | [Existing Systems Comparison](docs/existing-systems-comparison.pdf) - five systems compared using nine criteria |
+| 5 | Technology comparison | [Technology Comparison](docs/technology-comparison.pdf) - 13 technical decisions, alternatives and requirement-based justification |
+| 6 | Requirements specification | [Requirements Specification](docs/requirements-specification.pdf) - functional and non-functional requirements, priorities and acceptance criteria |
+| 7 | Architecture and diagrams | [Architecture](docs/architecture.md) and the diagrams below - components, data and processing scenarios |
+| 8 | UX / prototype | [Figma prototype](https://www.figma.com/design/oVOPB0JhPKVFBVWMuBbSlG/DATERA-EDU---UI?node-id=28-6) - user screens and key scenarios |
+| 9 | Verification and evaluation | [Verification Plan](docs/verification-plan.pdf) - tests, metrics, measurement conditions, targets and baselines |
+| 10 | Project management and risks | [Project Management and Risks](docs/project-management-and-risks.pdf) and [YouTrack](https://yakarta.youtrack.cloud/agiles/177-28/current) - responsibilities, milestones, tasks, risks and dependencies |
+| 11 | Supervisor feedback | Review comments, agreed actions and resulting revisions still need to be linked here; no dedicated feedback record was found in the repository |
 
-| Area | Status |
-| --- | --- |
-| Technical specification | Draft written, approval planned for November 2026 |
-| Repository, structure, config examples | Done |
-| Backend (Go) | Project skeleton: server, config from environment, CORS, `GET /health`, unit and API tests |
-| Frontend (React + TypeScript) | Project skeleton: routing, login page, API client, test setup. Figma mockups of the three cabinets in progress |
-| ML service (Python) | Module structure for the pipeline; audio preparation command, speaker merge and anonymization helpers with tests. Models are not connected yet |
-| Database, queue, file storage, Docker Compose | Not started (next stage) |
-| Model comparison (denoising, ASR, diarization, LLM) | Planned; templates are in `docs/comparisons/` |
+The **Requirements Traceability** document links requirements to components and checks. It is available in the [Developing folder on Google Drive](https://drive.google.com/drive/folders/1OJ7bCkGWsg-waUhPCl8O0dBJKZF7EOoo) and still needs to be added to `docs/`.
 
-Next steps: collect 15+ test lesson recordings with consent, set up the GPU server and Docker
-environment, compare ML models, implement registration, roles and file upload (FR-1 - FR-4).
+## Diagrams
 
-## Technologies
+The context, use-case and component diagrams are required for the first pre-defense. BPMN and ER diagrams provide additional process and database detail.
+
+| Diagram | View | Editable source |
+|---|---|---|
+| System context | [PNG](diagrams/context-diagram.png) | [draw.io](diagrams/context-diagram.drawio) |
+| Use cases | [PNG](diagrams/use-case-diagram.png) | [draw.io](diagrams/use-case-diagram.drawio) |
+| Components | [PNG](diagrams/component-diagram.png) | [draw.io](diagrams/component-diagram.drawio) |
+| Lesson-analysis process (BPMN) | [PNG](diagrams/bpmn-lesson-analysis.png) | [draw.io](diagrams/bpmn-lesson-analysis.drawio) |
+| Database structure (ER) | [JPG](diagrams/er-diagram.jpg) | [draw.io](diagrams/er-diagram.drawio) |
+
+## Selected technologies
 
 | Part | Technology |
-| --- | --- |
-| Frontend | React, TypeScript, Vite; charts: Recharts or ECharts; player: wavesurfer.js |
-| Backend API | Go (Gin or chi), REST, OpenAPI |
-| Database | PostgreSQL 16 + pgvector |
-| Task queue | RabbitMQ |
-| Cache | Redis |
-| File storage | MinIO (S3-compatible), audio is deleted after 30 days |
-| ML service | Python 3.11, PyTorch (CUDA), ffmpeg |
-| Denoising | DeepFilterNet / Demucs / RNNoise (chosen by comparison) |
-| Speech recognition | faster-whisper, large-v3 |
-| Diarization | pyannote.audio |
-| LLM | Through an adapter; cloud LLM with anonymized text for the MVP, local model as an alternative |
-| Deployment | Docker, Docker Compose, Nginx (HTTPS) |
+|---|---|
+| Frontend | React, TypeScript, Vite; planned UI libraries: shadcn/ui, TanStack Query, Recharts, wavesurfer.js |
+| Backend | Go, REST, OpenAPI |
+| Speech and ML | Python, PyTorch, ffmpeg, faster-whisper large-v3, pyannote.audio |
+| LLM | Cloud model through an adapter with anonymised text; QLoRA fine-tuning and possible local deployment in stage 2 |
+| Data and messaging | PostgreSQL 16 + pgvector, RabbitMQ, Redis, MinIO |
+| Deployment | Docker Compose and Nginx |
 
-Architecture: [component diagram](diagrams/src/components.mmd), [context diagram](diagrams/src/context.puml).
+These are design choices; full integration is planned. Alternatives and selection criteria are documented in the [Technology Comparison](docs/technology-comparison.pdf).
 
-## Links
+## Project links and submission
 
-| Resource | Link |
-| --- | --- |
-| YouTrack project (tasks) | <https://yakarta.youtrack.cloud/agiles/177-28/current> |
-| Figma mockups | <https://www.figma.com/design/oVOPB0JhPKVFBVWMuBbSlG/DATERA-EDU---UI?node-id=28-6&t=PEkTWHH2R80kr88c-1> |
-| Documentation index | [docs/README.md](docs/README.md) |
-| Technical specification | [docs/requirements/technical-specification.pdf](docs/requirements/technical-specification.pdf) |
-| Requirements | [docs/requirements/](docs/requirements/) |
-| Technology comparisons | [docs/comparisons/](docs/comparisons/) |
-| Architecture decisions (ADR) | [docs/architecture/](docs/architecture/) |
-| Diagrams | [diagrams/](diagrams/) |
+- [GitHub repository](https://github.com/ETairkhan/diplomka)
+- [YouTrack tasks](https://yakarta.youtrack.cloud/agiles/177-28/current)
+- [Figma prototype](https://www.figma.com/design/oVOPB0JhPKVFBVWMuBbSlG/DATERA-EDU---UI?node-id=28-6)
+- [All working documents on Google Drive](https://drive.google.com/drive/folders/1lOMblVEHawU8rGmMv2vU9GCae2ZH8WaZ)
 
-## Repository structure
+The submission materials are in `docs/` and `diagrams/`. Source code, tests and configuration remain in `src/`, `tests/` and `config/` as development continues.
 
-```
-.
-├── src/
-│   ├── frontend/        React + TypeScript web client
-│   ├── backend/         Go REST API
-│   └── ml_service/      Python ML pipeline (denoising, ASR, diarization, LLM)
-├── tests/               Tests: backend/, ml_service/, frontend/, e2e/, fixtures/
-├── docs/                Proposal, literature review, comparisons, requirements, ADR
-├── diagrams/            src/ (editable sources) and exports/ (images)
-├── config/              Config examples with placeholder values
-├── .env.example         Environment variables example
-├── go.work              Go workspace (backend + backend tests)
-└── requirements-dev.txt Python test tools
-```
+Each meaningful change should be linked to a YouTrack task with an owner, priority, deadline and acceptance criteria. Changes go through a branch and a pull request reviewed by another team member. Each student uses an identifiable personal account.
 
-## Setup
+Before submission, confirm access for the supervisor and committee, record supervisor feedback and revisions, and prepare examples of individual contributions and task-to-commit/PR links. Tag the reviewed submission `pre-defense-1` and record completed work, limitations and outstanding tasks. These checks are not confirmed by this README alone.
 
-Requirements: Go 1.22+, Node.js 20+, Python 3.11+.
+## Run the available starter code
 
-```
-git clone <repository-url>
-cd knowledge-control-system
-cp .env.example .env                              # then fill in your own values
+The full application is not ready. These commands run and check the existing foundation. Requirements: Go 1.22+, Node.js 20+ and Python 3.11+.
+
+Clone and prepare local configuration:
+
+```bash
+git clone https://github.com/ETairkhan/diplomka.git
+cd diplomka
+cp .env.example .env
 cp src/frontend/.env.example src/frontend/.env
 ```
 
-## Run
+Fill in local values. Keep credentials and real recordings out of Git; use example configuration and synthetic test data.
 
-Backend API (http://localhost:8080):
+Backend, from the repository root (the Go starter does not load `.env` automatically):
 
-```
+```bash
+set -a
+source .env
+set +a
 cd src/backend
 go run ./cmd/server
 ```
 
-Check: open http://localhost:8080/health, the answer is `{"status":"ok"}`.
+Check `http://localhost:8080/health`. The expected response is `{"status":"ok"}`.
 
-Frontend (http://localhost:5173):
+Frontend, in another terminal from the repository root:
 
-```
+```bash
 cd src/frontend
-npm install
+npm ci
 npm run dev
 ```
 
-ML service: the models are not connected yet, so only the tests can be run (see below).
-Running all services with one command (Docker Compose) will be added in the next stage.
+Open `http://localhost:5173`.
 
 ## Tests
 
-```
-# Backend unit tests
-cd src/backend && go test ./...
+Run each block from the repository root.
 
-# Backend API tests
-cd tests/backend && go test ./...
-
-# ML service tests (from the repository root)
-python -m venv .venv
-source .venv/bin/activate            # Windows: .venv\\Scripts\\activate
-pip install -r src/ml_service/requirements.txt -r requirements-dev.txt
-pytest
-
-# Frontend tests
-cd src/frontend && npm test
+```bash
+# Go unit and handler tests
+go test ./src/backend/... ./tests/backend/...
 ```
 
-## Security and personal data
+```bash
+# Frontend tests and build
+cd src/frontend
+npm ci
+npm test
+npm run build
+```
 
-The system processes voice recordings, including recordings of minors, so it follows the
-Law of the Republic of Kazakhstan "On Personal Data and Their Protection".
+```bash
+# Current ML helper tests
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r src/ml_service/requirements.txt -r requirements-dev.txt
+python -m pytest tests/ml_service
+```
 
-- Passwords, API keys, tokens and real `.env` files are never committed.
-  Only `*.example` files with placeholder values are in the repository.
-- Lesson recordings and any real user data are never stored in the repository
-  (`data/`, `uploads/` and audio files are ignored by Git). Tests use fake data only.
-- Only an anonymized transcript (without names) is sent to an external LLM.
-- If a secret is committed by mistake: change (rotate) it first, then remove it from the Git history.
