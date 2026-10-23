@@ -93,7 +93,6 @@ The submission materials are in `docs/` and `diagrams/`. Source code, tests and 
 
 ## Run the available starter code
 
-The full application is not ready. These commands run and check the existing foundation. Requirements: Go 1.22+, Node.js 20+ and Python 3.11+.
 
 Clone and prepare local configuration:
 
@@ -104,7 +103,6 @@ cp .env.example .env
 cp src/frontend/.env.example src/frontend/.env
 ```
 
-Fill in local values. Keep credentials and real recordings out of Git; use example configuration and synthetic test data.
 
 Backend, from the repository root (the Go starter does not load `.env` automatically):
 
@@ -116,7 +114,6 @@ cd src/backend
 go run ./cmd/server
 ```
 
-Check `http://localhost:8080/health`. The expected response is `{"status":"ok"}`.
 
 Frontend, in another terminal from the repository root:
 
