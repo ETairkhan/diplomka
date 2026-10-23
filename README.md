@@ -90,9 +90,6 @@ These are design choices; full integration is planned. Alternatives and selectio
 
 The submission materials are in `docs/` and `diagrams/`. Source code, tests and configuration remain in `src/`, `tests/` and `config/` as development continues.
 
-Each meaningful change should be linked to a YouTrack task with an owner, priority, deadline and acceptance criteria. Changes go through a branch and a pull request reviewed by another team member. Each student uses an identifiable personal account.
-
-Before submission, confirm access for the supervisor and committee, record supervisor feedback and revisions, and prepare examples of individual contributions and task-to-commit/PR links. Tag the reviewed submission `pre-defense-1` and record completed work, limitations and outstanding tasks. These checks are not confirmed by this README alone.
 
 ## Run the available starter code
 
