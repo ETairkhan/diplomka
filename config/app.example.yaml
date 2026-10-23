@@ -1,7 +1,7 @@
 
 
 app:
-    name: "AI"
+    name: "DATERA EDU"
     env: development
     language: ru
 
