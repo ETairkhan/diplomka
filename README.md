@@ -137,7 +137,11 @@ Run each block from the repository root.
 
 ```bash
 # Go unit and handler tests
-go test ./src/backend/... ./tests/backend/...
+cd src/backend
+go test ./...
+
+cd ../../tests/backend
+go test ./...
 ```
 
 ```bash
