@@ -54,7 +54,7 @@ The table follows the 11 pre-defense evaluation components. Documents contain th
 | 10 | Project management and risks | [Project Management and Risks](docs/project-management-and-risks.pdf) and [YouTrack](https://yakarta.youtrack.cloud/agiles/177-28/current) - responsibilities, milestones, tasks, risks and dependencies |
 | 11 | Supervisor feedback | Review comments, agreed actions and resulting revisions still need to be linked here; no dedicated feedback record was found in the repository |
 
-The **Requirements Traceability** document links requirements to components and checks. It is available in the [docs/requirements-traceability.pdf]
+The **Requirements Traceability** document links requirements to components and checks. It is available in the [Requirements Traceability](docs/requirements-traceability.pdf)
 
 ## Diagrams
 
