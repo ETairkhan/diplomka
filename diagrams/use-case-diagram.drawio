@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Use Case Diagram" id="uc1">
+    <mxGraphModel dx="1548" dy="1026" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bound" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#222222;verticalAlign=top;align=center;spacingLeft=10;fontStyle=1;fontSize=14;" value="DATERA EDU" vertex="1">
+          <mxGeometry height="750" width="680" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="oa" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#222222;fillColor=#ffffff;fontSize=12;" value="Organisation admin" vertex="1">
+          <mxGeometry height="60" width="30" x="95" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="te" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#222222;fillColor=#ffffff;fontSize=12;" value="Teacher" vertex="1">
+          <mxGeometry height="60" width="30" x="95" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="st" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#222222;fillColor=#ffffff;fontSize=12;" value="Student" vertex="1">
+          <mxGeometry height="60" width="30" x="95" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="pa" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#222222;fillColor=#ffffff;fontSize=12;" value="Parent" vertex="1">
+          <mxGeometry height="60" width="30" x="95" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="sa" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#222222;fillColor=#ffffff;fontSize=12;" value="System admin" vertex="1">
+          <mxGeometry height="60" width="30" x="1035" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="u1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Manage teachers, students&lt;br&gt;and invitations" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="u2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="View all students’ lessons&lt;br&gt;and reports&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="u3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Upload materials and&lt;br&gt;confirm topics&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="207" as="geometry" />
+        </mxCell>
+        <mxCell id="u4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Upload lesson recording&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="272" as="geometry" />
+        </mxCell>
+        <mxCell id="u5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Fix speaker labels&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="337" as="geometry" />
+        </mxCell>
+        <mxCell id="u6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Confirm or change&lt;br&gt;topic status&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="402" as="geometry" />
+        </mxCell>
+        <mxCell id="u7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="View teacher report,&lt;br&gt;knowledge map, player&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="u8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="View student report&lt;br&gt;and knowledge map&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="557" as="geometry" />
+        </mxCell>
+        <mxCell id="u9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Give consent for&lt;br&gt;a student&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="632" as="geometry" />
+        </mxCell>
+        <mxCell id="u10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="View parent report and&lt;br&gt;knowledge map&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="285" y="697" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Analyse lesson and build&lt;br&gt;reports&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="595" y="272" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Monitor processing queue&lt;br&gt;and errors&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="595" y="492" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Choose model and&lt;br&gt;prompt version&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="595" y="562" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#222222;fontSize=11;" value="Delete data after consent&lt;br&gt;withdrawal&amp;nbsp;" vertex="1">
+          <mxGeometry height="56" width="250" x="595" y="632" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#222222;fontSize=12;" value="Cloud LLM API&lt;br&gt;(external system)" vertex="1">
+          <mxGeometry height="70" width="150" x="955" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" edge="1" parent="1" source="oa" style="endArrow=none;html=1;strokeColor=#222222;" target="u1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" edge="1" parent="1" source="oa" style="endArrow=none;html=1;strokeColor=#222222;" target="u2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="te" style="endArrow=none;html=1;strokeColor=#222222;" target="u3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" edge="1" parent="1" source="te" style="endArrow=none;html=1;strokeColor=#222222;" target="u4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" edge="1" parent="1" source="te" style="endArrow=none;html=1;strokeColor=#222222;" target="u5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" edge="1" parent="1" source="te" style="endArrow=none;html=1;strokeColor=#222222;" target="u6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" edge="1" parent="1" source="te" style="endArrow=none;html=1;strokeColor=#222222;" target="u7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" edge="1" parent="1" source="st" style="endArrow=none;html=1;strokeColor=#222222;" target="u8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" edge="1" parent="1" source="pa" style="endArrow=none;html=1;strokeColor=#222222;" target="u9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" edge="1" parent="1" source="pa" style="endArrow=none;html=1;strokeColor=#222222;" target="u10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" edge="1" parent="1" source="sa" style="endArrow=none;html=1;strokeColor=#222222;" target="b1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" edge="1" parent="1" source="sa" style="endArrow=none;html=1;strokeColor=#222222;" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" edge="1" parent="1" source="sa" style="endArrow=none;html=1;strokeColor=#222222;" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" edge="1" parent="1" source="llm" style="endArrow=none;html=1;strokeColor=#222222;" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" edge="1" parent="1" source="u4" style="endArrow=open;dashed=1;html=1;strokeColor=#222222;fontSize=11;labelBackgroundColor=#ffffff;" target="a1" value="&lt;&lt;include&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

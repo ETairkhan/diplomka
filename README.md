@@ -10,7 +10,7 @@ the student understands and which topics need more work. The student also gets a
 on the weak topics.
 
 Diploma project (graduation thesis), Astana IT University. Full requirements are in the
-[technical specification](docs/requirements/technical-specification.pdf) (in Russian).
+[technical specification](docs/requirements/TZ_DATERA.docx) (in Russian).
 
 ## Problem statement
 
