@@ -11,5 +11,5 @@ class LLMAdapter:
         self.api_key = os.getenv("LLM_API_KEY", "")
 
     def analyze(self, transcript):
-        # TODO: call the selected LLM and return topics, scores and summary as JSON
+        # call the selected LLM and return topics, scores and summary as JSON
         raise NotImplementedError("LLM is not selected yet")
